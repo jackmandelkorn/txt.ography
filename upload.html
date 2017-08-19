@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!--txt.ography-->
+<!--designed by jack mandelkorn-->
+<!--jackmandelkorn.com-->
+<html>
+  <head>
+    <link rel="shortcut icon" type="image/png" href="favicon.png">
+    <title>txt.ography</title>
+    <!--google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Overpass+Mono:300,400" rel="stylesheet">
+    <!--material icons-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--jquery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!--chroma-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/1.3.4/chroma.min.js"></script>
+    <!--tipped-->
+    <script type="text/javascript" src="js/tipped/tipped.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/tipped/tipped.css"/>
+    <!--global style-->
+    <link rel="stylesheet" href="css/txtography.css"/>
+    <!--page-specific style-->
+    <link rel="stylesheet" href="css/pages/upload.css"/>
+  </head>
+  <body>
+    <div id="frame" class="main-container noselect">
+      <i title="change colors" id="color-switch" class="material-icons icon-switch tooltip" onclick="switchColors()">color_lens</i>
+      <p style="margin:0;">&nbsp;</p>
+      <i title="invert colors" id="color-invert" class="material-icons icon-switch tooltip" onclick="invertColors()">invert_colors</i>
+      <p style="margin:0;">&nbsp;</p>
+      <i title="black and white" id="color-bw" class="material-icons icon-switch tooltip" onclick="bwColors()">exposure</i>
+      <break></break>
+      <h1>txt.ography</h1>
+      <break></break>
+      <p style="text-align:center;">txt.ography is a tool that converts an image into plain text. to begin, simply adjust the parameters and then <label for="file"><u style="cursor: pointer;">upload an image</u></label>.</p>
+      <break style="height:4vh;"></break>
+      <p>select a character set: &nbsp;</p>
+        <div onclick="charSelect('charset70',this)" class="char-icon"><b class="char">70</b> HD</div>
+        <div onclick="charSelect('charset24',this)" class="char-icon"><b class="char">24</b> Standard</div>
+        <div onclick="charSelect('charset10',this)" class="char-icon selected"><b class="char">10</b> Poster</div>
+        <div onclick="charSelect('charset5',this)" class="char-icon"><b class="char">5</b> LoFi</div>
+        <div onclick="charSelect('charset3',this)" class="char-icon"><b class="char">3</b> Flat</div>
+      <span class="help-icon tooltip" data-position="top" title="the 'character set' is the amount and style of characters that your image will be composed of.">?</span>
+      <break style="height: 1vh;"></break>
+      <p>image height: &nbsp;</p>
+      <input id="image-height" type="number" value="64" min="4" max="144">
+        <span class="help-icon tooltip" data-position="top" title="the 'image height' is the height (in characters) of your final image.">?</span>
+      <break style="height:6vh;"></break>
+      <label for="file"><i id="upload-cover" class="material-icons tooltip" data-position="bottom" title="upload an image">file_upload</i></label>
+    </div>
+    <p id="footer" class="noselect">created by jack mandelkorn, © 2017</p>
+    <div id="ribbon"></div>
+    <input type="file" name="file" id="file" class="slide-button" />
+    <!--global js-->
+    <script src="js/txtography.js"></script>
+    <!--page-specific js-->
+    <script src="js/pages/upload.js"></script>
+  </body>
+</html>

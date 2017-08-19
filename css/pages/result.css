@@ -1,0 +1,29 @@
+body {
+  overflow-y: scroll !important;
+  padding-top: 10vh;
+}
+
+.result {
+  font-size: 10px;
+  font-weight: bold;
+  text-align: center;
+}
+
+#footer {
+  position: relative !important;
+  display: inline-block !important;
+}
+
+#container {
+  margin-bottom: 100px;
+}
+
+#back {
+  cursor: pointer;
+  position: fixed;
+  font-size: 32px;
+  color: var(--fore);
+  top: 4vh;
+  left: 4vh;
+  z-index: 1;
+}
