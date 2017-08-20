@@ -19,8 +19,8 @@ var colorsOn = 3;
 var invertedColors = false;
 var colorDistanceThreshold = 120;
 var baseColors = ["Red","Orange","Yellow","Lime","Cyan","Magenta"]; //bright colors
-var foregroundColor = "black";
-var backgroundColor = "white";
+var foregroundColor = "#000000";
+var backgroundColor = "#FFFFFF";
 bwColors();
 tippy('.tooltip', {theme: 'norm', size: 'small', arrow: 'true', animateFill: false});
 
@@ -57,8 +57,8 @@ function invertColors() {
 }
 
 function bwColors() {
-  foregroundColor = 'black';
-  backgroundColor = 'white';
+  foregroundColor = '#000000';
+  backgroundColor = '#FFFFFF';
   invertedColors = true;
   $("body").get(0).style.setProperty("--back", backgroundColor);
   $("body").get(0).style.setProperty("--fore", foregroundColor);
