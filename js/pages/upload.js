@@ -12,6 +12,10 @@ $(function () {
 });
 
 //color variables
+var red = 1;
+var green = 1;
+var blue = 1;
+var colorsOn = 3;
 var invertedColors = false;
 var colorDistanceThreshold = 120;
 var baseColors = ["Red","Orange","Yellow","Lime","Cyan","Magenta"]; //bright colors
@@ -62,11 +66,28 @@ function bwColors() {
 
 function imageLoad(e) {
   var data = e.target.result;
-  window.location.href = ("result.html?height=" + document.getElementById("image-height").value + "&charset=" + charset + "&inverted=" + invertedColors + "&foreground=" + foregroundColor + "&background=" + backgroundColor + "&img=" + data);
+  window.location.href = ("result.html?red=" + red + "&green=" + green + "&blue=" + blue + "&height=" + document.getElementById("image-height").value + "&charset=" + charset + "&inverted=" + invertedColors + "&foreground=" + foregroundColor + "&background=" + backgroundColor + "&img=" + data);
 }
 
 function charSelect(set,obj) {
   charset = set;
   document.getElementsByClassName("selected")[0].className = "char-icon";
   obj.className = "char-icon selected";
+}
+
+function chanSelect(color,obj) {
+  if (eval(color) === 0) {
+    eval(color + " = 1;");
+    colorsOn++;
+    obj.className = "char-icon";
+    document.getElementById(color + "-icon").innerHTML = "invert_colors";
+  }
+  else {
+    if (colorsOn > 1) {
+      eval(color + " = 0;");
+      colorsOn--;
+      obj.className = "char-icon selected";
+      document.getElementById(color + "-icon").innerHTML = "invert_colors_off";
+    }
+  }
 }

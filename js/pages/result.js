@@ -1,6 +1,6 @@
-var charset70 = "$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\\|()1{}[]?-_+~<>i!lI;:,\"^`'. ";
-var charset24 = "@8M*hbqm0QUcnt1?-~i:\". ";
-var charset10 = "@%#*+=-:. ";
+var charset70 = "@Q&$WM0B%8#hkbdpqwmZOJUYXvuoanxjftIl!rzc+iLC?][}{1)(|\\/*><~^;:,\"-_`'. ";
+var charset24 = "@Q0M#8%hbqUn1ti?c\"~:.- ";
+var charset10 = "@%#+*=:-. ";
 var charset5 = "@#+: ";
 var charset3 = "@: ";
 var charRatio = 14 / 6.59;
@@ -13,6 +13,9 @@ invertedColors = getUrlVars().inverted;
 var imageData = getUrlVars().img;
 var heightData = getUrlVars().height;
 var charsetData = getUrlVars().charset;
+  var redData = Number(getUrlVars().red);
+  var greenData = Number(getUrlVars().green);
+  var blueData = Number(getUrlVars().blue);
 eval("var charset = " + charsetData);
 render(imageData, heightData);
 
@@ -53,8 +56,8 @@ function render(data, height) {
 
 function determineCharacter(canvas, x, y) {
   var data = canvas.getImageData(x, y, 1, 1).data;
-  var mean = (data[0] + data[1] + data[2]);
-  var level = Math.floor(mean / ((255 * 3) / charset.length));
+  var mean = ((data[0] * redData) + (data[1] * greenData) + (data[2] * blueData));
+  var level = Math.floor(mean / (((255 * redData) + (255 * greenData) + (255 * blueData)) / charset.length));
   if (data[3] === 0) {
     return " ";
   }

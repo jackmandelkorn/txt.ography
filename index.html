@@ -34,7 +34,7 @@
       <break></break>
       <p style="text-align:center;">txt.ography is a tool that converts an image into plain text. to begin, simply adjust the parameters and then <label for="file"><u style="cursor: pointer;">upload an image</u></label>.</p>
       <break style="height:4vh;"></break>
-      <p>select a character set: &nbsp;</p>
+      <p>character set: &nbsp;</p>
         <div onclick="charSelect('charset70',this)" class="char-icon"><b class="char">70</b> HD</div>
         <div onclick="charSelect('charset24',this)" class="char-icon"><b class="char">24</b> Standard</div>
         <div onclick="charSelect('charset10',this)" class="char-icon selected"><b class="char">10</b> Poster</div>
@@ -42,11 +42,17 @@
         <div onclick="charSelect('charset3',this)" class="char-icon"><b class="char">3</b> Flat</div>
       <span class="help-icon tooltip" data-position="top" title="the 'character set' is the amount and style of characters that your image will be composed of.">?</span>
       <break style="height: 1vh;"></break>
+      <p>color channels: &nbsp;</p>
+        <div onclick="chanSelect('red',this)" class="char-icon"><b class="char"><i id="red-icon" class="material-icons" style="font-size:14px;">invert_colors</i>&nbsp;R</b></div>
+        <div onclick="chanSelect('green',this)" class="char-icon"><b class="char"><i id="green-icon" class="material-icons" style="font-size:14px;">invert_colors</i>&nbsp;G</b></div>
+        <div onclick="chanSelect('blue',this)" class="char-icon"><b class="char"><i id="blue-icon" class="material-icons" style="font-size:14px;">invert_colors</i>&nbsp;B</b></div>
+      <span class="help-icon tooltip" data-position="top" title="the 'color channels' are the color channels of the original image that the final composition is based on.">?</span>
+      <break style="height: 1vh;"></break>
       <p>image height: &nbsp;</p>
       <input id="image-height" type="number" value="64" min="4" max="144">
         <span class="help-icon tooltip" data-position="top" title="the 'image height' is the height (in characters) of your final image.">?</span>
       <break style="height:6vh;"></break>
-      <label for="file"><i id="upload-cover" class="material-icons tooltip" data-position="bottom" title="upload an image">file_upload</i></label>
+      <label for="file"><i id="upload-cover" class="material-icons tooltip" data-position="bottom" title="upload an image < 10mb">file_upload</i></label>
     </div>
     <p id="footer" class="noselect">created by jack mandelkorn, © 2017</p>
     <div id="ribbon"></div>
