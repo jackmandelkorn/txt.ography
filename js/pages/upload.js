@@ -1,5 +1,11 @@
 var charset = 'charset10';
 
+$(window).bind("pageshow", function() {
+  document.getElementById("file").type = "";
+  document.getElementById("file").value = "";
+  document.getElementById("file").type = "file";
+});
+
 $(function () {
     $(":file").change(function () {
       console.log(this.files && this.files[0]);
